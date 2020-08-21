@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MessageV.ApplicationCore.Entities;
@@ -8,7 +9,7 @@ namespace MessageV.ApplicationCore.Interfaces
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(Guid id);
         Task<PagedList<T>> ListAsync(PaginationOptions options);
         Task<PagedList<T>> ListAsync(ISpecification<T> spec, PaginationOptions options);
         Task<T> AddAsync(T entity);
