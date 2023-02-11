@@ -6,15 +6,16 @@ namespace MessageV.ApplicationCore.Specifications
 {
     public abstract class BaseSpecification<T> : ISpecification<T>
     {
-        protected BaseSpecification(){
-            
+        protected BaseSpecification()
+        {    
         }
 
         public BaseSpecification(Expression<Func<T, bool>> criteria)
         {
             Criteria = criteria;
         }
-        public Expression<Func<T, bool>> Criteria { get; protected set;}
+        
+        public Expression<Func<T, bool>> Criteria { get; protected set; }
         public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
         public List<string> IncludeStrings { get; } = new List<string>();
 
